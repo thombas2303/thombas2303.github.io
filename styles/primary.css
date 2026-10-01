@@ -2,18 +2,17 @@
     --margin:min(15vw,25px);
     --padding:min(2vw,10px);
     --yellow:#ffee00;
+    --yellow2: #ffff00;
+    --gray: #222222;
     --orange:#ffaa00;
 }
 body, html{
-    background-image: linear-gradient(to bottom, var(--yellow), var(--orange));
+    background-image: linear-gradient(to bottom, var(--gray), var(--orange));
     background-attachment: fixed;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     box-sizing: border-box;
-}
-p {
-    background-color: var(--yellow);
 }
 .layout-container {
     display: grid;
@@ -25,27 +24,29 @@ p {
     gap: var(--margin);
     padding: var(--margin);
     height: 100vh;
+    box-sizing: border-box;
 }
 .sidenav {
   grid-area: sidenav;
-  background-color: var(--yellow);
+  background-color: var(--gray);
   border: 1px solid var(--orange);
   overflow-x: hidden;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 .sidenav a {
   padding: var(--padding);
   display: block;
-  color: var(--orange);
   text-decoration: none;
 }
 .sidenav a:hover {
   background-color: var(--orange);
-  color: var(--yellow);
+  color: var(--gray);
 }
 .title {
     grid-area: title;
-    background-color: var(--yellow);
+    background-color: var(--gray);
     border: 1px solid var(--orange);
     padding: 0 var(--padding);
     display: flex;
@@ -53,8 +54,67 @@ p {
 }
 .content {
     grid-area: content;
-    background-color: var(--yellow);
+    background-color: var(--gray);
     border: 1px solid var(--orange);
     padding: var(--padding);
     overflow-y: auto;
+}
+.vhs-container {
+    position: relative;
+    overflow: hidden;
+    font-family: monospace;
+}
+.vhs-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999;
+    background: linear-gradient(
+        rgba(18,16,16,0) 50%,
+        rgba(0,0,0,0.25) 50%
+    );
+    background-size: 100% 4px;
+    animation: flicker 2.5s infinite;
+}
+.vhs-overlay::before{
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        rgba(18,16,16,0) 0%,
+        rgba(255,255,255,0.08) 50%,
+        rgba(18,16,16,0) 100%
+    );
+    opacity: 0.6;
+    height: 20%;
+    animation: vhs-tracking 8s linear infinite;
+}
+.vhs-container h1,
+.vhs-container h2,
+.vhs-container h3,
+.vhs-container p,
+.vhs-container a,
+.vhs-container li,
+.vhs-container span
+{
+    color: var(--orange);
+    position:relative;
+    display: inline-block;
+}
+
+@keyframes flicker {
+    0% {opacity: 0.97;}
+    50% {opacity: 1;}
+    100% {opacity: 0.98;}
+}
+@keyframes vhs-tracking {
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(500%) ;}
 }

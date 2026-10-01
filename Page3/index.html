@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/styles/primary.css" />
+    <title>Thomas Allen</title>
+  </head>
+  <body>
+
+    <div id="layout"></div>
+
+    <template id="title">
+      <h2>leimont.co.uk</h2>
+    </template>
+
+    <template id="content">
+      <p>Its page 3</p>
+    </template>
+
+    <script>
+      fetch('/layout.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('layout').innerHTML = html;
+          const pageContent = document.getElementById('content').content;
+          document.getElementById('page-content').appendChild(pageContent.cloneNode(true));
+          const pageTitle = document.getElementById('title').content;
+          document.getElementById('page-title').appendChild(pageTitle.cloneNode(true));
+        });
+    </script>
+  </body>
+</html>
