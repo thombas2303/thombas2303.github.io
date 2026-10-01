@@ -36,11 +36,12 @@ p {
 .sidenav a {
   padding: var(--padding);
   display: block;
+  color: var(--orange);
   text-decoration: none;
 }
 .sidenav a:hover {
   background-color: var(--orange);
-  color: black;
+  color: var(--yellow);
 }
 .title {
     grid-area: title;
