@@ -1,4 +1,9 @@
 body, html{
     background-image: linear-gradient(to bottom, #ffee00, #ffaa00);
     background-attachment: fixed;
+    margin: 5%;
+}
+p {
+    background-color: #ffee00;
+    border-color: #ffaa00;
 }
