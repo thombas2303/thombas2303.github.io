@@ -1,54 +1,59 @@
+:root{
+    --margin:min(15vw,25px);
+    --padding:min(2vw,10px);
+    --yellow:#ffee00;
+    --orange:#ffaa00;
+}
 body, html{
-    background-image: linear-gradient(to bottom, #ffee00, #ffaa00);
+    background-image: linear-gradient(to bottom, var(--yellow), var(--orange));
     background-attachment: fixed;
-    margin:0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 p {
-    background-color: #ffee00;
+    background-color: var(--yellow);
+}
+.layout-container {
+    display: grid;
+    grid-template-columns: min(15vw, 150px) 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "sidenav title"
+        "sidenav content";
+    gap: var(--margin);
+    padding: var(--margin);
+    height: 100vh;
 }
 .sidenav {
-  height: 96%;
-  width: 15%;
-  max-width: 150px;
-  position: fixed;
-  z-index: 1;
-  background-color: #ffee00;
+  grid-area: sidenav;
+  background-color: var(--yellow);
+  border: 1px solid var(--orange);
   overflow-x: hidden;
-  border: #ffaa00;
-  border-style: solid;
-  border-width: 0.1%;
-  margin: 2%;
+  overflow-y: auto;
 }
 .sidenav a {
-  color: #ffee00;
-  padding: 2%;
+  padding: var(--padding);
   display: block;
+  text-decoration: none;
 }
 .sidenav a:hover {
-  background-color: #ffaa00;
+  background-color: var(--orange);
   color: black;
 }
-.content {
-    margin: 13% 2% 2% 19%;
-    padding-left: 2%;
-    padding-right: 2%;
-    width: 75%;
-    height: 87%;
-    background-color: #ffee00;
-    border: #ffaa00;
-    border-style: solid;
-    border-width: 0.1%;
-    position:fixed;
+.title {
+    grid-area: title;
+    background-color: var(--yellow);
+    border: 1px solid var(--orange);
+    padding: 0 var(--padding);
+    display: flex;
+    align-items: center;
 }
-.title{
-    margin:2% 2% 2% 19%;
-    padding-left: 2%;
-    padding-right: 2%;
-    width: 75%;
-    height: 8%;
-    background-color: #ffee00;
-    border: #ffaa00;
-    border-style: solid;
-    border-width: 0.1%;
-    position:fixed;
+.content {
+    grid-area: content;
+    background-color: var(--yellow);
+    border: 1px solid var(--orange);
+    padding: var(--padding);
+    overflow-y: auto;
 }
