@@ -7,7 +7,6 @@ p {
     border-color: #ffaa00;
     border-width: 0.05%;
 }
-
 .sidenav {
   height: 100%;
   width: 5%;
@@ -18,19 +17,15 @@ p {
   background-color: #ffee00;
   overflow-x: hidden;
 }
-
 .sidenav a {
   color: #ffee00;
   padding: 16px;
   display: block;
 }
-
-/* Change color on hover */
 .sidenav a:hover {
   background-color: #ffaa00;
   color: black;
 }
-
 .content {
   margin-left: 5%;
   padding-left: 0.5%;
