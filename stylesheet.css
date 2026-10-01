@@ -9,6 +9,7 @@ p {
 .sidenav {
   height: 96%;
   width: 15%;
+  max-width: 150px;
   position: fixed;
   z-index: 1;
   background-color: #ffee00;
@@ -28,7 +29,7 @@ p {
   color: black;
 }
 .content {
-    margin: 11% 2% 2% 19%;
+    margin: 13% 2% 2% 19%;
     padding-left: 2%;
     padding-right: 2%;
     width: 75%;
@@ -44,7 +45,7 @@ p {
     padding-left: 2%;
     padding-right: 2%;
     width: 75%;
-    height: 7%;
+    height: 8%;
     background-color: #ffee00;
     border: #ffaa00;
     border-style: solid;
