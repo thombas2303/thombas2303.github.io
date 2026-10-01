@@ -14,6 +14,9 @@ body, html{
     min-height: 100vh;
     box-sizing: border-box;
 }
+hr {
+    border-color: var(--orange);
+}
 .layout-container {
     display: grid;
     grid-template-columns: min(15vw, 150px) 1fr;
@@ -39,6 +42,7 @@ body, html{
   padding: var(--padding);
   display: block;
   text-decoration: none;
+  color: var(--orange)
 }
 .sidenav a:hover {
   background-color: var(--orange);
@@ -100,11 +104,16 @@ body, html{
 .vhs-container h2,
 .vhs-container h3,
 .vhs-container p,
-.vhs-container a,
 .vhs-container li,
 .vhs-container span
 {
     color: var(--orange);
+    position:relative;
+    display: inline-block;
+}
+.link
+{
+    color: var(--yellow);
     position:relative;
     display: inline-block;
 }
