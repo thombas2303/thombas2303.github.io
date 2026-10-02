@@ -9,7 +9,7 @@
     <div id="layout"></div>
 
     <template id="title">
-      <h2>leimont.co.uk</h2>
+      <h3>leimont.co.uk</h3>
     </template>
 
     <template id="content">
@@ -28,15 +28,22 @@
         I collect various playing cards, and I read classical literature.
       </p>
       <hr>
-      <p>Music</p>
-      
+
+      <section id="recent-songs" class="recent-songs-section active">
+        <div class="section-content">
+          <h3>Recently Listened To</h3>
+          <ul id="song-list" class="song-list"></ul>
+          <h3>Top Artists</h3>
+          <div id="artist-row" class="artist-row"></div>
+        </div>
+      </section>
+    
       <hr>
 
-      <h3>Recently Playerd Games</h3>
+      <h3>Recently Played Games</h3>
       <br>
 
       <div id="games-container" class="games-row"><p>Loading games...</p></div>
-      <script src="/js/steam-integration.js"></script>
       <br>
 
       <hr>
@@ -49,10 +56,21 @@
         .then(res => res.text())
         .then(html => {
           document.getElementById('layout').innerHTML = html;
+          
           const pageContent = document.getElementById('content').content;
           document.getElementById('page-content').appendChild(pageContent.cloneNode(true));
+          
           const pageTitle = document.getElementById('title').content;
           document.getElementById('page-title').appendChild(pageTitle.cloneNode(true));
+
+          // Run scripts synchronously after DOM node insertion
+          const steamScript = document.createElement('script');
+          steamScript.src = '/js/steam-integration.js';
+          document.body.appendChild(steamScript);
+
+          const musicScript = document.createElement('script');
+          musicScript.src = '/js/stats-fm.js'; // Ensure path matches your filename
+          document.body.appendChild(musicScript);
         });
     </script>
   </body>
