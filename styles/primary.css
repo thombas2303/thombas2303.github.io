@@ -105,7 +105,8 @@ hr {
 .vhs-container h3,
 .vhs-container p,
 .vhs-container li,
-.vhs-container span
+.vhs-container span,
+.vhs-container pre
 {
     color: var(--orange);
     position:relative;
@@ -116,6 +117,94 @@ hr {
     color: var(--yellow);
     position:relative;
     display: inline-block;
+}
+
+.games-row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--margin);
+  overflow-x: auto;
+  padding: var(--padding) 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--orange) var(--gray);
+}
+
+.games-row::-webkit-scrollbar {
+  height: 6px;
+}
+.games-row::-webkit-scrollbar-track {
+  background: var(--gray);
+}
+.games-row::-webkit-scrollbar-thumb {
+  background: var(--orange);
+}
+.game-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 184px;
+  background-color: var(--gray);
+  border: 1px solid var(--orange);
+  padding: var(--padding);
+  text-align: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.game-card .game-title {
+  margin-top: calc(var(--padding) * 0.8);
+  margin-bottom: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--orange);
+  word-wrap: break-word;
+  width: 100%;
+}
+.game-card .game-playtime {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--yellow);
+  display: block;
+}
+.game-card .game-playtime-total {
+  font-family: monospace;
+  font-size: 10px;
+  color: var(--orange);
+  opacity: 0.8;
+  display: block;
+  margin-top: 2px;
+}
+.game-card:hover .game-title,
+.game-card:hover .game-playtime-total {
+  color: var(--yellow2);
+}
+.game-card:hover {
+  border-color: var(--yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(255, 238, 0, 0.3);
+}
+.game-card img {
+  width: 100%;
+  height: 86px;
+  object-fit: cover;
+  border: 1px solid var(--orange);
+  box-sizing: border-box;
+}
+.game-card p {
+  margin-top: calc(var(--padding) * 0.8);
+  margin-bottom: 0;
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--orange);
+  word-wrap: break-word;
+  width: 100%;
+}
+.game-card:hover p {
+  color: var(--yellow);
 }
 
 @keyframes flicker {
