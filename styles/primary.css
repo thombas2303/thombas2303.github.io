@@ -377,6 +377,53 @@ hr {
   color: var(--yellow2);
 }
 
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 184px;
+  background-color: var(--gray);
+  border: 1px solid var(--orange);
+  padding: var(--padding);
+  text-align: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.contact-card:hover {
+  border-color: var(--yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(255, 238, 0, 0.3);
+}
+.contact-me {
+  overflow: hidden;
+  width: 100%;
+  padding: var(--padding) 0;
+}
+.contact-track {
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll 8s linear infinite;
+}
+.contact-group {
+  display: flex;
+  gap: var(--margin);
+  padding-right: var(--margin); 
+}
+.contact-track:hover {
+  animation-play-state: paused;
+}
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.465%);
+  }
+}
+
 @keyframes flicker {
   0% {opacity: 0.27861;}
   5% {opacity: 0.34769;}
