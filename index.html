@@ -50,21 +50,9 @@
 
       <h3>Contact</h3>
       
-      <div class="contact-me">
-        <div class="contact-track">
+      <div class="contact-me" id="contact-container">
+        <div class="contact-track" id="contact-track">
           <div class="contact-group">
-            <li class="contact-card"><a href="https://www.linkedin.com/in/thomas-allen-14a9122a1/"><img src="/images/linkedin.png" width="144px"></a></li>
-            <li class="contact-card"><a href="https://github.com/thombas2303"><img src="/images/github.png" width="144px"></a></li>
-            <li class="contact-card"><a href="mailto:thomasallen@leimont.co.uk"><img src="/images/email.png" width="144px"></a></li>
-          </div>
-    
-          <div class="contact-group" aria-hidden="true">
-            <li class="contact-card"><a href="https://www.linkedin.com/in/thomas-allen-14a9122a1/"><img src="/images/linkedin.png" width="144px"></a></li>
-            <li class="contact-card"><a href="https://github.com/thombas2303"><img src="/images/github.png" width="144px"></a></li>
-            <li class="contact-card"><a href="mailto:thomasallen@leimont.co.uk"><img src="/images/email.png" width="144px"></a></li>
-          </div>
-
-          <div class="contact-group" aria-hidden="true">
             <li class="contact-card"><a href="https://www.linkedin.com/in/thomas-allen-14a9122a1/"><img src="/images/linkedin.png" width="144px"></a></li>
             <li class="contact-card"><a href="https://github.com/thombas2303"><img src="/images/github.png" width="144px"></a></li>
             <li class="contact-card"><a href="mailto:thomasallen@leimont.co.uk"><img src="/images/email.png" width="144px"></a></li>
@@ -90,10 +78,12 @@
           const steamScript = document.createElement('script');
           steamScript.src = '/js/steam-integration.js';
           document.body.appendChild(steamScript);
-
           const musicScript = document.createElement('script');
           musicScript.src = '/js/stats-fm.js'; // Ensure path matches your filename
           document.body.appendChild(musicScript);
+          const scrollScript = document.createElement('script');
+          scrollScript.src = 'js/scroller.js';
+          document.body.appendChild(scrollScript);
         });
     </script>
   </body>

@@ -405,23 +405,12 @@ hr {
 .contact-track {
   display: flex;
   width: max-content;
-  animation: infinite-scroll 8s linear infinite;
+  will-change: transform;
 }
 .contact-group {
   display: flex;
   gap: var(--margin);
-  padding-right: var(--margin); 
-}
-.contact-track:hover {
-  animation-play-state: paused;
-}
-@keyframes infinite-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.465%);
-  }
+  padding-right: var(--margin);
 }
 
 @keyframes flicker {
