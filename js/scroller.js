@@ -37,24 +37,19 @@
 
     let offset = 0;
     const speed = 0.8; // Pixels per frame
-    let isHovered = false;
-
-    container.addEventListener('mouseenter', () => { isHovered = true; });
-    container.addEventListener('mouseleave', () => { isHovered = false; });
 
     function step() {
-      if (!isHovered) {
-        offset += speed;
+      offset += speed;
         
-        const groupWidth = baseGroup.offsetWidth;
+      const groupWidth = baseGroup.offsetWidth;
 
-        // Reset precisely when scrolling past one single group width
-        if (groupWidth > 0 && offset >= groupWidth) {
-          offset %= groupWidth;
-        }
-
-        track.style.transform = `translateX(-${offset}px)`;
+      // Reset precisely when scrolling past one single group width
+      if (groupWidth > 0 && offset >= groupWidth) {
+        offset %= groupWidth;
       }
+
+      track.style.transform = `translateX(-${offset}px)`;
+      
 
       requestAnimationFrame(step);
     }
